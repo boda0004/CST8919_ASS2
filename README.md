@@ -1,125 +1,242 @@
-# CST8919 – DevOps Security and Compliance  
-## Assignment 2 – Cloud Service Alternatives Report
+# CST8919 -- DevOps Security and Compliance
 
----
+## Assignment 2 -- Cloud Service Alternatives Report
 
-## **1. Introduction**
-We have made significant use of Microsoft Azure services throughout this class to put into practice concepts of compliance, security, and DevSecOps.
-The purpose of this task is to increase cloud knowledge by listing the comparable services offered by Amazon Web Services (AWS) and Google Cloud Platform (GCP) for these Azure services and comparing them in terms of features, security/compliance, pricing, and DevSecOps integration.
+**Due:** Week 15 (August 15, 2025)\
+**Weight:** 10% of Final Grade\
+**Type:** Individual Assignment
 
----
+------------------------------------------------------------------------
 
-## **2. Quick Reference Table**
+##  Objective
 
-| Azure Service              | AWS Equivalent                                      | GCP Equivalent                              |
-|----------------------------|------------------------------------------------------|----------------------------------------------|
-| Azure Active Directory     | AWS IAM Identity Center / AWS SSO + IAM              | Google Cloud Identity / Cloud IAM            |
-| Azure Monitor & Log Analytics | Amazon CloudWatch + CloudWatch Logs              | Google Cloud Monitoring & Logging            |
-| Azure Policy               | AWS Organizations + Service Control Policies (SCPs) | GCP Organization Policy Service               |
-| Defender for Cloud         | AWS Security Hub + Amazon GuardDuty                  | Google Security Command Center                |
-| Azure Sentinel (SIEM/SOAR) | Amazon Security Lake + AWS Security Hub              | Google Chronicle                              |
+The services of Microsoft Azure employed in the CST8919 can be identified, as listed in this report.
+me-- DevOps -- Security and Compliance course and compare them to
+similar services within Amazon Web Services (AWS) and Google Cloud
+Platform (GCP)**. The contrast points out **characteristics,
+security/compliance, pricing models and integration DevSecOps,
+offering a multi-cloud take on security and compliance
+practices.
 
----
+------------------------------------------------------------------------
 
-## **3. Detailed Comparisons**
+##  Azure Services Covered
 
----
+-   Microsoft Entra ID (Azure Active Directory -- IAM, SSO)\
+-   Azure Monitor & Log Analytics\
+-   Azure Policy\
+-   Microsoft Defender for Cloud\
+-   Microsoft Sentinel (SIEM/SOAR)
 
-### **3.1 Azure Active Directory (SSO, IAM)**
+------------------------------------------------------------------------
 
-**AWS Equivalent:** AWS IAM Identity Center / AWS SSO + IAM  
-**GCP Equivalent:** Google Cloud Identity / Cloud IAM
+##  Quick Comparison Table
 
-| Feature                   | Azure Active Directory                    | AWS IAM Identity Center (SSO)              | Google Cloud Identity / Cloud IAM          |
-|---------------------------|-------------------------------------------|---------------------------------------------|---------------------------------------------|
-| **Overview**              | Cloud-based IAM with SSO, MFA, conditional access, and identity protection | Centralized identity management across AWS accounts, supports SSO integration | Identity management, SSO, and access control for GCP resources |
-| **Core Features**         | SSO, MFA, RBAC, conditional policies       | SSO, role-based access, cross-account access | SSO, directory sync, RBAC, and API-driven IAM policies |
-| **Security & Compliance** | SOC, ISO, HIPAA, FedRAMP, GDPR compliance  | SOC, ISO, FedRAMP, HIPAA compliance          | ISO, FedRAMP, SOC, GDPR compliance           |
-| **Pricing Model**         | Free + Premium P1/P2 per-user licenses     | Included with AWS Organizations             | Free tier + Premium Cloud Identity           |
-| **DevSecOps Integration** | Integrates with Azure DevOps, GitHub, APIs | Integrates with AWS CI/CD and Organizations  | Integrates with GCP APIs and CI/CD pipelines |
+  --------------------------------------------------------------------------------
+  **Azure     **AWS          **GCP           **Key Difference Highlights**
+  Service**   Equivalent**   Equivalent**    
+  ----------- -------------- --------------- -------------------------------------
+  Microsoft   AWS IAM        Google Cloud    Azure strong in hybrid AD
+  Entra ID    Identity       Identity        integration; AWS best for
+  (AAD)       Center                         multi-account; GCP ties into
+                                             Workspace.
 
-**Narrative:**  
-With significant integration into Microsoft services, Azure Active Directory (now known as Microsoft Entra ID) provides enterprise-grade IAM. For AWS environments, the AWS IAM Identity Center offers centralized SSO and IAM policy enforcement. The combination of Cloud Identity and IAM from Google Cloud offers unified identity and access management across all Google Cloud services.
----
+  Azure       Amazon         Google Cloud    Azure emphasizes KQL queries; AWS
+  Monitor &   CloudWatch +   Operations      combines monitoring + audit; GCP
+  Log         CloudTrail     Suite           integrates well with BigQuery.
+  Analytics                  (Stackdriver)   
 
-### **3.2 Azure Monitor & Log Analytics**
+  Azure       AWS Config +   Google          Azure offers granular remediation;
+  Policy      Service        Organization    AWS offers compliance packs; GCP
+              Control        Policy Service  focuses on org-level enforcement.
+              Policies                       
+              (SCPs)                         
 
-**AWS Equivalent:** Amazon CloudWatch + CloudWatch Logs  
-**GCP Equivalent:** Google Cloud Monitoring & Logging
+  Defender    AWS Security   Google Security Azure native compliance mappings; AWS
+  for Cloud   Hub +          Command Center  broader service coverage; GCP
+              GuardDuty      (SCC)           integrates with Chronicle SIEM.
 
-| Feature                   | Azure Monitor & Log Analytics              | Amazon CloudWatch                           | Google Cloud Monitoring & Logging           |
-|---------------------------|---------------------------------------------|----------------------------------------------|----------------------------------------------|
-| **Overview**              | Monitors metrics, logs, and application health across Azure | Collects, monitors, and analyzes logs/metrics for AWS resources | Monitors resource performance and captures logs for GCP resources |
-| **Core Features**         | Metric analysis, custom alerts, dashboards  | Alarms, metrics, dashboards, log aggregation | Metrics explorer, log-based alerts, dashboards |
-| **Security & Compliance** | Role-based access, encryption in transit    | IAM policies, CloudTrail integration         | IAM roles, CMEK encryption                   |
-| **Pricing Model**         | Pay-per-GB ingestion and retention          | Pay-per-metric and log volume                 | Pay-per-ingested data and retention duration |
-| **DevSecOps Integration** | API integration with CI/CD pipelines        | Integration with AWS CDK, CloudFormation     | Integration with Cloud Deployment Manager    |
+  Microsoft   Amazon         Chronicle       Sentinel is cloud-native SIEM; AWS
+  Sentinel    Security       Security        relies on third-party; GCP Chronicle
+              Lake + Partner Operations      optimized for Google-scale threat
+              SIEMs          (SIEM)          intel.
+  --------------------------------------------------------------------------------
 
-**Narrative:**  
-Azure Monitor feeds into Log Analytics to offer comprehensive observability across Azure, enabling sophisticated query capabilities. For AWS workloads, AWS CloudWatch offers comparable real-time monitoring and alerts. The Monitoring & Logging service from GCP seamlessly integrates with Google's DevOps tools and gives you performance insights.
+------------------------------------------------------------------------
 
----
+##  Detailed Service Comparisons
 
-### **3.3 Azure Policy**
+### 1. Microsoft Entra ID (Azure AD)
 
-**AWS Equivalent:** AWS Organizations + Service Control Policies (SCPs)  
+**AWS Equivalent:** AWS IAM Identity Center (formerly SSO)\
+**GCP Equivalent:** Google Cloud Identity
+
+-   **Overview**:
+    -  IAM, SSO, MFA are administered with the use of Azure AD (Microsoft Entra ID).
+        hybrid identity on Active Directory.\ _{ Boys To Men Songs
+    -  AWS IAM Identity Center offers identity federation and SSO
+        AWS accounts and applications.\ implications.
+    -   GCP Cloud Identity adds SSO, MFA to Google Workspace IAM
+        and policies of devices.
+-   **Core Features**:
+    -   **Azure**: Enterprise app gallery, hybrid AD join, conditional
+        access.\
+    -   **AWS**: Multi-account federation, fine-grained access policies,
+        SCIM provisioning.\
+    -   **GCP**: Workspace-native, device management, context-aware
+        access.
+-   **Security & Compliance**:
+    -   Azure Entra ID: SOC, ISO, HIPAA, FedRAMP High.\
+    -   AWS IAM: FedRAMP, PCI DSS, SOC 1/2/3.\
+    -   GCP Cloud Identity: ISO 27001, FedRAMP, GDPR-ready.
+-   **Pricing Model**:
+    -   Azure: Free tier + P1/P2 premium plans.\
+    -   AWS: Part of IAM, federation at a cost of a feature.\
+    -   GCP: Included in Workspace / standalone subscription.
+-   **DevSecOps Integration**:
+    -   Azure is connected to GitHub Actions, Azure DevOps pipelines.\
+    -   CodePipeline and third party CI/CD can integrate with AWS.\
+    -   GCP intersperses with Cloud Build and identity conscious proxy.
+
+------------------------------------------------------------------------
+
+### 2. Azure Monitor & Log Analytics
+
+**AWS Equivalent:** Amazon CloudWatch + CloudTrail\
+**GCP Equivalent:** Google Cloud Operations Suite (Stackdriver)
+
+-   **Overview**:
+    -   Logs, alerts, and metrics are integrated in Azure monitor and Kusto
+        KQL or Query Language.\
+    -   CloudWatch covers monitoring/logs and CloudTrail does auditing
+        API calls.\
+    -   GCP Ops Suite (Stackdriver) contains a logging, monitoring,
+        -so tracing, so debugging.
+-   **Core Features**:
+    -   **Azure**: Metrics, KQL queries, Application Insights, Log
+        Analytics workspaces.\
+    -   **AWS**: Unified CloudWatch dashboards, CloudTrail auditing,
+        alarms, metrics streams.\
+    -   **GCP**: Logging + tracing + BigQuery export, APM integration.
+-   **Security & Compliance**:
+    -   Azure: FedRAMP, HIPAA, SOC, ISO.\
+    -   AWS: SOC, ISO, PCI DSS, FedRAMP.\
+    -   GCP: ISO, GDPR, FedRAMP.
+-   **Pricing**:
+    -   Azure: Pay-as-you-go (per GB ingestion + retention).\
+    -   AWS: Pay per metric, log ingestion, retention.\
+    -   GCP: Free quotas, pay per GB ingestion/analysis.
+-   **DevSecOps Integration**:
+    -   Azure: Tight GitHub + DevOps integration for CI/CD
+        observability.\
+    -   AWS: Lambda/CodePipeline actions come about as a result of CloudWatch alerts.\
+    -   GCP: Logs are piped to Pub/Sub and Cloud Functions.
+
+------------------------------------------------------------------------
+
+### 3. Azure Policy
+
+**AWS Equivalent:** AWS Config + Service Control Policies (SCPs)\
 **GCP Equivalent:** Google Organization Policy Service
 
-| Feature                   | Azure Policy                                 | AWS Organizations + SCPs                     | GCP Organization Policy Service               |
-|---------------------------|----------------------------------------------|-----------------------------------------------|------------------------------------------------|
-| **Overview**              | Defines and enforces rules for Azure resources | Centralized governance with SCPs to restrict account actions | Defines and enforces constraints on GCP resources |
-| **Core Features**         | Compliance evaluation, remediation           | Account-level restrictions, compliance checks | Organization-wide constraints and enforcement  |
-| **Security & Compliance** | Global policy enforcement, audit logs        | Enforced at AWS account hierarchy             | Enforced at GCP org hierarchy                  |
-| **Pricing Model**         | Included with Azure                          | Included with AWS Organizations               | Included with GCP                               |
-| **DevSecOps Integration** | Integrates with ARM templates, CI/CD         | Integrates with IaC tools like CloudFormation | Integrates with Deployment Manager and APIs    |
+-   **Overview**:
+    -   Azure Policy implements governance, compliance and remediation.\
+    -   AWS Config for inventory, SCPs for org policy enforcement.\
+    -   GCP Organization Policy impose on the usage of the resources.
+        restrictions.
+-   **Core Features**:
+    -   **Azure**: Built-in definitions, remediation tasks, compliance
+        dashboard.\
+    -   **AWS**: Config rules, conformance packs, SCPs for accounts.\
+    -   **GCP**: Org-level constraints, IAM policy enforcement.
+-   **Security & Compliance**:
+    -   All three are in concurrence with CIS, NIST, ISO frameworks.
+-   **Pricing**:
+    -   Azure: Free + pays to do advanced remediation.\
+    -   AWS: Billed /config per evaluate + resource tracked.\
+    -   GCP: No extra cost on org policy enforcement.
+-   **DevSecOps Integration**:
+    -   Azure: CI/CD regulations enforcement by means of Azure DevOps & GitHub.\
+    -   AWS: Config was incorporated in the approvals of CodePipeline.\
+    -   GCP: Org policy pushed up to Deployment as policy
+        Manager/Terraform.
 
-**Narrative:**  
-Governance is enforced at scale via Azure Policy. The Organization Policy Service in GCP offers declarative restrictions at the project and folder levels, whereas AWS achieves similar results through Organizations with SCPs.
+------------------------------------------------------------------------
 
----
+### 4. Microsoft Defender for Cloud
 
-### **3.4 Defender for Cloud**
+**AWS Equivalent:** AWS Security Hub + Amazon GuardDuty\
+**GCP Equivalent:** Google Security Command Center (SCC)
 
-**AWS Equivalent:** AWS Security Hub + Amazon GuardDuty  
-**GCP Equivalent:** Google Security Command Center
+-   **Overview**:
+    -   Defender on Cloud offers protection to workload and Villain threats.
+        compliance insights, and security.\
+    -   AWS Security Hub consolidates results, AWS GuardDuty, detects
+        threats.\
+    -   GCP SCC does security posture management + threat detection.
+-   **Core Features**:
+    -   **Azure**: CIS compliance dashboards, agent-based VM protection,
+        workload recommendations.\
+    -   **AWS**: GuardDuty based on ML threat detection, Inspector
+        scans, central hub.\
+    -   **GCP**: SCC puts together with Google-native threat intelligence, Event
+        Threat Detection.
+-   **Security & Compliance**:
+    -   Services are all mapped to CIS, PCI DSS, ISO, HIPAA, FedRAMP.
+-   **Pricing**:
+    -   Azure: Workload protection is free + paid plans.\
+    -   AWS: pay-per-finding security hub, GuardDuty pay-per-event
+        analyzed.\
+    -   GCP: Free + premium SCC Enterprise edition.
+-   **DevSecOps Integration**:
+    -   Azure: The results contributed to the Sentinel and DevOps processes.\
+    -   AWS: Results incorporated into CloudWatch/EventBridge of CI/CD.\
+    -   GCP: Findings can start Pub/Sub pipelines.
 
-| Feature                   | Defender for Cloud                          | AWS Security Hub + GuardDuty                 | Google Security Command Center                |
-|---------------------------|----------------------------------------------|-----------------------------------------------|------------------------------------------------|
-| **Overview**              | Threat protection, security posture management | Security findings aggregation and threat detection | Centralized security and risk management       |
-| **Core Features**         | Threat detection, compliance benchmarking    | Threat detection, compliance dashboards       | Threat detection, vulnerability scanning       |
-| **Security & Compliance** | Compliance with CIS, ISO, SOC, FedRAMP, GDPR | Compliance checks via AWS standards           | Compliance with ISO, SOC, FedRAMP              |
-| **Pricing Model**         | Pay-per-enabled resource                     | Pay-per-account and analysis volume           | Tier-based pricing                             |
-| **DevSecOps Integration** | Integrates with Azure DevOps pipelines       | Integrates with AWS Security services and CI/CD| Integrates with GCP APIs and automation        |
+------------------------------------------------------------------------
 
-**Narrative:**  
-Defender for Cloud integrates with Azure-native processes and provides ongoing security evaluation. GCP's Security Command Center provides a single security dashboard with automated risk information, while AWS Security Hub and GuardDuty offer combined threat intelligence and detection.
+### 5. Microsoft Sentinel
 
----
+**AWS Equivalent:** Amazon Security Lake + Partner SIEM (Splunk, IBM
+QRadar)\
+**GCP Equivalent:** Chronicle Security Operations (SIEM)
 
-### **3.5 Azure Sentinel (SIEM/SOAR)**
+-   **Overview**:
+    -   Sentinel is the native SIEM/SOAR AI-driven analytics in Azure.\
+    -   AWS does not have native SIEM, we have SIEM through Security Lake and through partners.\
+    -   GCP Chronicle provides Google-level SIEM, advanced threat
+        intel.
+-   **Core Features**:
+    -   **Azure**: KQL powered analytics, playbooks, SOAR.\
+    -   **AWS**: Central data lake + partner Siem intergration.\
+    -   **GCP**: Chronicle offers enterprise-scale, low-cost SIEM with
+        worldwide threat feeds.
+-   **Security & Compliance**:
+    -   Azure Sentinel: FedRAMP High, ISO, HIPAA.\
+    -   AWS Security Lake: PCI, HIPAA, ISO.\
+    -   GCP Chronicle: ISO 27001, SOC 2.
+-   **Pricing**:
+    -   Azure: Per GB consumption pay-as-you-go.\
+    -   AWS: Siem pricing per gb in Security Lake + SIEM license.\
+    -   GCP: Chronicle tiers of fixed price.
+-   **DevSecOps Integration**:
+    -   Azure: SOAR playbooks are GitHub Actions or Logic Apps.\
+    -   AWS: EventBridge directs the results to automation.\
+    -   GCP: Chronicle is combined with Cloud Functions to fix it.
 
-**AWS Equivalent:** Amazon Security Lake + AWS Security Hub  
-**GCP Equivalent:** Google Chronicle
+------------------------------------------------------------------------
 
-| Feature                   | Azure Sentinel                              | Amazon Security Lake + AWS Security Hub      | Google Chronicle                              |
-|---------------------------|----------------------------------------------|-----------------------------------------------|------------------------------------------------|
-| **Overview**              | Cloud-native SIEM/SOAR for security analytics | Centralized log data lake with integrated security services | Security analytics and threat detection platform |
-| **Core Features**         | Data ingestion, analytics, incident response | Data lake, analytics, threat detection        | Big data security analytics, incident analysis |
-| **Security & Compliance** | ISO, SOC, FedRAMP, GDPR, HIPAA               | Compliance via AWS standards                  | Compliance via Google standards                |
-| **Pricing Model**         | Pay-per-GB data ingestion and retention      | Pay-per-ingested GB and storage                | Pricing based on data ingestion and storage    |
-| **DevSecOps Integration** | Logic Apps, Playbooks for automation         | Lambda integration for security automation    | API integration for automated workflows        |
+##  Conclusion
 
-**Narrative:**  
-Utilizing AI for security analytics, Azure Sentinel is a developed cloud SIEM/SOAR platform. GCP Chronicle specializes in the rapid and scalable analysis of security incidents, whereas AWS Security Lake consolidates security data and Security Hub aids in actionable intelligence.
+Microsoft Azure offers enterprise-ready security integrated into it all.
+compliance services**though AWS tends to need combining several
+infrastructures, and GCP is concentrated on **-scale Google data smarts**. Each cloud
+has strengths:\
+- **Azure** leads in hybrid identity, compliance, and SIEM
+integration.\
+- **AWS** offers high breadth of service and flexibility of ecosystem.\
+- **GCP** is concentrated on data driven security and analytics at all scale.
 
----
-
-## **4. Conclusion**
-Despite the fact that Microsoft Azure, AWS, and GCP have distinct branding and implementations, the fundamental security, compliance, and DevSecOps features are similar across platforms.
-Understanding cross-platform equivalents enhances multi-cloud security posture and enables flexibility in cloud adoption tactics.
----
-
-## **5. References**
-- Microsoft Azure Documentation – https://learn.microsoft.com/azure/  
-- AWS Documentation – https://docs.aws.amazon.com/  
-- Google Cloud Documentation – https://cloud.google.com/docs  
+On the DevSecOps side, the Azure provides the highest **out-of-box integration**.
+However, AWS and GCP have the potential to be able to equivalize capabilities with configuration.
+third-party integrations.
